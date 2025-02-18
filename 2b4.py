@@ -1,24 +1,12 @@
-def count_world_occurrences(sentence):
-
-    worlds = sentence.split()
-
-    word_count = {}
-
+def word_count(str):
+    counts = dict()  
+    words = str.split() 
     for word in words:
+        if word in counts:  
+            counts[word] += 1
+        else:  
+            counts[word] = 1
+    return counts  
 
-        word = word.lower()
 
-        if word in word_count:
-            word_count[word] += 1
-    else:
-                word_count[word] = 1
-
-    returnword_count
-
-    sentence = input("enter a sentence: ")
-
-    word_count = count_word_occurrences(sentence)
-
-    print("word occurrences:")
-    for word, count in word_count items():
-        print(f"'{word}':{count}")
+print(word_count('the quick brown fox'))
